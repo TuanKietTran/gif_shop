@@ -1,0 +1,118 @@
+<nav class="navbar navbar-expand-md navbar-light bg-white border-bottom fixed-top">
+  <div class="container-fluid">
+    <!-- Sidebar Toggle Button -->
+    <button
+      class="navbar-toggler me-2 d-md-none"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#drawer-navigation"
+      aria-controls="drawer-navigation"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <!-- Hamburger Icon -->
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Brand -->
+    <a href="{% url 'home' %}" class="navbar-brand me-4">SaaS</a>
+
+    <!-- Collapsible Navigation (if any) -->
+    <div class="collapse navbar-collapse" id="drawer-navigation">
+      <!-- Left-aligned items can go here -->
+    </div>
+
+    <!-- Right-aligned Items -->
+    <div class="d-flex align-items-center ms-auto">
+      <!-- Notifications Dropdown -->
+      <div class="dropdown me-2">
+        <button
+          class="btn btn-link text-secondary p-0"
+          type="button"
+          id="notificationDropdown"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i class="bi bi-bell fs-5"></i>
+          <span class="visually-hidden">View notifications</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown">
+          <!-- Notifications List -->
+          <!-- Example Notification Item -->
+          <li>
+            <a href="#" class="dropdown-item">
+              <div class="d-flex align-items-center">
+                <img
+                  src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
+                  alt="Bonnie Green"
+                  class="rounded-circle me-3"
+                  width="40"
+                  height="40"
+                />
+                <div>
+                  <div class="text-muted small">New message from <strong>Bonnie Green</strong></div>
+                  <div class="text-muted small">"Hey, what's up? All set for the presentation?"</div>
+                  <div class="text-muted small">a few moments ago</div>
+                </div>
+              </div>
+            </a>
+          </li>
+          <!-- Repeat for other notifications -->
+        </ul>
+      </div>
+
+      <!-- Apps Dropdown -->
+      <div class="dropdown me-2">
+        <button
+          class="btn btn-link text-secondary p-0"
+          type="button"
+          id="appsDropdown"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i class="bi bi-grid fs-5"></i>
+          <span class="visually-hidden">View apps</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="appsDropdown">
+          <li>
+            <div class="container">
+              <div class="row">
+                <!-- App Item -->
+                <div class="col-4 text-center">
+                  <a href="#" class="text-decoration-none">
+                    <i class="bi bi-bag fs-1 text-secondary"></i>
+                    <div class="small">Sales</div>
+                  </a>
+                </div>
+                <!-- Repeat for other apps -->
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- User Dropdown -->
+      <div class="dropdown">
+        <button
+          class="btn btn-secondary px-4 py-2"
+          type="button"
+          id="userMenuButton"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          {{ request.user.username.0 }}
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenuButton">
+          <li>
+            <h6 class="dropdown-header">{{ request.user.username }}</h6>
+            <p class="dropdown-item-text">{{ request.user.email }}</p>
+          </li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="{% url 'pricing' %}">Pricing</a></li>
+          <li><a class="dropdown-item" href="{% url 'user_subscription' %}">Billing settings</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

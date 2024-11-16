@@ -1,0 +1,44 @@
+{% extends 'dashboard/base.html' %}
+
+{% block head_title %}Your Subscription - {{ block.super }}{% endblock head_title %}
+
+{% block content %}
+<h1 class="fs-4 fw-semibold">Your Subscription</h1>
+
+<div class="mt-3">
+    <form action="" method="POST" class="d-inline-block me-2">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">Refresh</button>
+    </form>
+    <a href="{{ subscription.get_cancel_url }}" class="btn btn-outline-danger">Cancel Membership</a>
+</div>
+
+<div class="card mt-4">
+    <div class="card-body">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th scope="row">Plan name</th>
+                    <td>{{ subscription.plan_name }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Status</th>
+                    <td>{{ subscription.status|title }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Membership age</th>
+                    <td>{{ subscription.original_period_start|timesince }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Start</th>
+                    <td>{{ subscription.current_period_start }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">End</th>
+                    <td>{{ subscription.current_period_end|timeuntil }} ({{ subscription.current_period_end }})</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock content %}

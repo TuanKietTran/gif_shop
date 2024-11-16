@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block head_title %}Pricing - {{ block.super }}{% endblock head_title %}
+
+{% block content %}
+
+<section class="bg-white">
+    <div class="container-xl py-5 px-4">
+        <div class="container-md text-center mb-5">
+            <h2 class="mb-4 display-4 fw-bold text-dark">Designed for business teams like yours</h2>
+            <p class="mb-4 fw-light text-muted fs-5">Here at SaaS we focus on markets where technology, innovation, and
+                capital can unlock long-term value and drive economic growth.</p>
+
+            <div class="d-flex justify-content-center">
+                <ul class="nav nav-pills">
+                    <li class="nav-item me-2">
+                        <a href="{{ mo_url }}"
+                            class="nav-link {% if active == 'month' %}active text-white bg-primary{% else %%}"
+                            aria-current="page">Monthly</a>
+                    </li>
+                    <li class="nav-item me-2">
+                        <a href="{{ yr_url }}"
+                            class="nav-link {% if active == 'year' %}active text-white bg-primary{% else %}"">Yearly</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class=" row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                            <!-- Pricing Cards -->
+                            {% for price_obj in object_list %}
+                            {% include 'subscriptions/snippets/pricing-card.html' with object=price_obj %}
+                            {% endfor %}
+            </div>
+        </div>
+</section>
+
+{% endblock content %}

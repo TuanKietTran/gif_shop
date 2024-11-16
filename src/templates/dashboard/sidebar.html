@@ -1,0 +1,155 @@
+<!-- Sidebar -->
+
+<aside
+  class="offcanvas offcanvas-start bg-white border-end"
+  tabindex="-1"
+  id="drawer-navigation"
+  aria-labelledby="drawer-navigation-label"
+>
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="drawer-navigation-label">Sidenav</h5>
+    <button
+      type="button"
+      class="btn-close text-reset"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="offcanvas-body p-0">
+    <!-- Search Form (Hidden on md and up) -->
+    <form action="#" method="GET" class="d-md-none mb-2 px-3">
+      <div class="input-group">
+        <input
+          type="text"
+          name="search"
+          id="sidebar-search"
+          class="form-control"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-secondary" type="submit">
+          <i class="bi bi-search"></i>
+        </button>
+      </div>
+    </form>
+    <!-- Navigation List -->
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a href="#" class="nav-link text-dark">
+          <i class="bi bi-speedometer2 me-2"></i>
+          Overview
+        </a>
+      </li>
+      <li>
+        <button
+          class="nav-link text-dark d-flex align-items-center w-100 text-start"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapsePages"
+          aria-expanded="false"
+          aria-controls="collapsePages"
+        >
+          <i class="bi bi-file-earmark-text me-2"></i>
+          Pages
+          <i class="bi bi-chevron-down ms-auto"></i>
+        </button>
+        <div class="collapse" id="collapsePages">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li>
+              <a href="#" class="nav-link text-dark ps-5">Settings</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link text-dark ps-5">Kanban</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link text-dark ps-5">Calendar</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <button
+          class="nav-link text-dark d-flex align-items-center w-100 text-start"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseSales"
+          aria-expanded="false"
+          aria-controls="collapseSales"
+        >
+          <i class="bi bi-cart me-2"></i>
+          Sales
+          <i class="bi bi-chevron-down ms-auto"></i>
+        </button>
+        <div class="collapse" id="collapseSales">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li>
+              <a href="#" class="nav-link text-dark ps-5">Products</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link text-dark ps-5">Billing</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link text-dark ps-5">Invoice</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <a href="#" class="nav-link text-dark position-relative">
+          <i class="bi bi-chat-dots me-2"></i>
+          Messages
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
+            4
+            <span class="visually-hidden">unread messages</span>
+          </span>
+        </a>
+      </li>
+      <li>
+        <button
+          class="nav-link text-dark d-flex align-items-center w-100 text-start"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseAuth"
+          aria-expanded="false"
+          aria-controls="collapseAuth"
+        >
+          <i class="bi bi-lock me-2"></i>
+          Authentication
+          <i class="bi bi-chevron-down ms-auto"></i>
+        </button>
+        <div class="collapse" id="collapseAuth">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li>
+              <a href="#" class="nav-link text-dark ps-5">Sign In</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link text-dark ps-5">Sign Up</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link text-dark ps-5">Forgot Password</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+    <!-- Secondary Navigation -->
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li>
+        <a href="#" class="nav-link text-dark">
+          <i class="bi bi-book me-2"></i>
+          Docs
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link text-dark">
+          <i class="bi bi-ui-radios-grid me-2"></i>
+          Components
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link text-dark">
+          <i class="bi bi-question-circle me-2"></i>
+          Help
+        </a>
+      </li>
+    </ul>
+  </div>
+</aside>

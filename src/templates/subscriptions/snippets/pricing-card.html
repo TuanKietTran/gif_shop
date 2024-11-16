@@ -1,0 +1,24 @@
+<!-- Pricing Card -->
+<div class="card text-center mx-auto" style="max-width: 24rem;">
+    <div class="card-body">
+        <h3 class="card-title mb-4">{{ object.display_sub_name }}</h3>
+        {% if object.display_sub_subtitle %}
+        <p class="card-subtitle mb-4 text-muted">{{ object.display_sub_subtitle }}</p>
+        {% endif %}
+        <div class="my-4">
+            <span class="display-4 fw-bold">${{ object.price }}</span>
+            <span class="text-muted">/{{ object.interval }}</span>
+        </div>
+        <!-- List -->
+        <ul class="list-unstyled text-start mb-4">
+            {% for feature in object.display_features_list %}
+            <li class="d-flex align-items-center mb-2">
+                <!-- Icon -->
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                <span>{{ feature }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+        <a href="{{ object.get_checkout_url }}" class="btn btn-primary">Select Plan</a>
+    </div>
+</div>

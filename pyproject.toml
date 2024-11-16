@@ -1,0 +1,35 @@
+
+[project]
+name = "gif_shop"
+version = "0.1.0"
+description = "Gif Shop"
+authors = [{name = "TuanKietTran", email = "kyletran101.work@gmail.com"}]
+license = {text = "MIT"}
+
+dependencies = [
+    "django>=5.0,<5.1",
+    "djangorestframework",
+    "python-decouple",  # for environment variables
+    "psycopg[binary]",        # for database
+    "dj-database-url",        # for database
+    "requests",              # for requests
+    "django-allauth[socialaccount]",
+    "django-allauth-ui",
+    "stripe"
+]
+
+[project.optional-dependencies]
+dev = [
+    "black",           # code formatter
+    "flake8",          # linter
+    "pytest",          # testing framework
+    "pytest-django",   # pytest plugin for Django
+    "coverage",        # code coverage
+    "mypy",            # static type checker
+    "isort"            # import sorter
+]
+
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
