@@ -8,11 +8,13 @@ license = {text = "MIT"}
 
 dependencies = [
     "django>=5.0,<5.1",
-    "djangorestframework",
+    "gunicorn",
+    "uvicorn",
     "python-decouple",  # for environment variables
     "psycopg[binary]",        # for database
     "dj-database-url",        # for database
     "requests",              # for requests
+    "whitenoise",             # for static files
     "django-allauth[socialaccount]",
     "django-allauth-ui",
     "stripe"

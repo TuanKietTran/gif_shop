@@ -25,10 +25,11 @@ SECRET_KEY = config("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don"t run with debug turned on in production!
 DEBUG = config("DJANGO_DEBUG", cast=bool)
+PRODUCTION_HOST = config("PRODUCTION_HOST", default=None)
 
 ALLOWED_HOSTS = [
-    ".railway.app" # https://saas.prod.railway.app
-]
+    PRODUCTION_HOST # https://saas.prod.railway.app
+] if PRODUCTION_HOST else []
 
 if DEBUG:
     ALLOWED_HOSTS += [
@@ -66,6 +67,7 @@ MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "allauth.account.middleware.AccountMiddleware",
