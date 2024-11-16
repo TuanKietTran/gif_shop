@@ -1,22 +1,18 @@
-databases:
-  - name: mysitedb
-    plan: free
-    databaseName: mysite
-    user: mysite
-
 services:
   - type: web
     plan: free
-    name: mysite
+    name: gif_shop
     runtime: python
     buildCommand: "./build.sh"
     startCommand: "python -m gunicorn gif_shop.asgi:application -k uvicorn.workers.UvicornWorker"
     envVars:
       - key: DATABASE_URL
-        fromDatabase:
-          name: mysitedb
-          property: connectionString
+        value: "{{DATABASE_URL}}"
       - key: SECRET_KEY
         generateValue: true
-      - key: WEB_CONCURRENCY
-        value: 4
+      - key: DJANGO_SECRET_KEY
+        value: "{{DJANGO_SECRET_KEY}}"
+      - key: DJANGO_DEBUG
+        value: 0
+      - key: PRODUCTION_HOSTS
+        value: ".onrender.com"
